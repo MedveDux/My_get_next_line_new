@@ -6,7 +6,7 @@
 /*   By: cyelena <cyelena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 17:25:16 by cyelena           #+#    #+#             */
-/*   Updated: 2021/11/28 18:59:10 by cyelena          ###   ########.fr       */
+/*   Updated: 2021/11/30 16:31:29 by cyelena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,13 +60,11 @@ char	*get_line(int fd, char *remains, char *buf)
 	char		*temp;
 
 	byte_was_read = 1;
-	while (byte_was_read != 0 && !found_n(remains))//ft_strchr(remains, '\n')) ///remains
+	while (byte_was_read != 0 && !found_n(remains))
 	{
 		byte_was_read = read(fd, buf, BUFFER_SIZE);
 		if (byte_was_read < 0)
-		{
 			return (NULL);
-		}
 		buf[byte_was_read] = '\0';
 		if (!remains)
 			remains = ft_strdup("");
@@ -113,10 +111,7 @@ char	*get_next_line(int fd)
 		return (NULL);
 	buf = (char *)malloc(sizeof(char) * (BUFFER_SIZE + 1));
 	if (!buf)
-	{
-		free (buf); ///////
 		return (NULL);
-	}
 	remains = get_line(fd, remains, buf);
 	free (buf);
 	if (!remains)
