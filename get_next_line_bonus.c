@@ -6,7 +6,7 @@
 /*   By: cyelena <cyelena@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/11/14 17:25:16 by cyelena           #+#    #+#             */
-/*   Updated: 2021/11/30 16:43:59 by cyelena          ###   ########.fr       */
+/*   Updated: 2021/12/03 17:10:16 by cyelena          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -121,24 +121,24 @@ char	*get_next_line(int fd)
 	return (line);
 }
 
-int	main(void)
-{
-	char	**line;
-	int		fd1;
-	int		fd2;
-	int		counter;
+// int	main(void)
+// {
+// 	char	**line;
+// 	int		fd1;
+// 	int		fd2;
+// 	int		counter;
 	
-	fd1 = open("text2.txt", O_RDONLY);
-	// write(1, "1", 1);
-	counter = 0;
-	line[counter] = get_next_line(fd1);
-	//fd2 = open("text2.txt", O_RDONLY);
-	while (counter <= 3)
-	{
-		printf("%s", line[counter]);
-		free (line[counter]);
-		counter++;
-		line[counter] = get_next_line(fd1);
-	}
-	free (line[counter]);
-}
+// 	fd1 = open("text2.txt", O_RDONLY);
+// 	// write(1, "1", 1);
+// 	counter = 0;
+// 	line[counter] = get_next_line(fd1);
+// 	//fd2 = open("text2.txt", O_RDONLY);
+// 	while (counter <= 3)
+// 	{
+// 		printf("%s", line[counter]);
+// 		free (line[counter]);
+// 		counter++;
+// 		line[counter] = get_next_line(fd1);
+// 	}
+// 	free (line[counter]);
+// }
